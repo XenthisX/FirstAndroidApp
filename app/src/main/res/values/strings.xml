@@ -1,0 +1,22 @@
+<!DOCTYPE resources [<!ENTITY author "Elijah Bosley">]>
+
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="time_mode">The current time mode is: </string>
+    <string name="time_mode_24">24 hour</string>
+    <string name="time_mode_12">12 hour</string>
+    <string name="time_mode_text">text</string>
+    <string name="time_format_12">HH:mm a</string>
+    <string name="time_format_24">hh:mm</string>
+    <string name="help">Help</string>
+    <string name="author_tab">Author</string>
+    <string name="help_text">This is a test help text</string>
+    <string name="author_info">This application was designed by: &author;</string>
+    <string name="start_date">Saturday, June 18th, 2016"</string>
+    <string name="end_date">Sunday, June 19th, 2016</string>
+    <string name="date_range">Worked on between:</string>
+</resources>
