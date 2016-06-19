@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="lightColorActionBar">#3F51B5</color>
+    <color name="lightColorActionBarDark">#303F9F</color>
+    <color name="lightColorAccent">#FF4081</color>
+
+    <color name="darkColorActionBar">#3bbb12</color>
+    <color name="darkColorActionBarDark">#303F9F</color>
+    <color name="darkColorAccent">#FF4081</color>
 </resources>

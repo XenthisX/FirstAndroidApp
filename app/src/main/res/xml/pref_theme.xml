@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:entries="@array/pref_theme_titles"
+        android:entryValues="@array/pref_theme_values"
+        android:key="theme_pref"
+        android:summary="This preference lets you choose a theme for the app"
+        android:title="Select Theme" />
+</PreferenceScreen>

@@ -13,6 +13,18 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="DarkTheme" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorPrimary">@color/darkColorActionBar</item>
+        <item name="colorPrimaryDark">@color/darkColorActionBarDark</item>
+        <item name="colorAccent">@color/darkColorAccent</item>
+    </style>
+
+    <style name="LightTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/lightColorActionBar</item>
+        <item name="colorPrimaryDark">@color/lightColorActionBarDark</item>
+        <item name="colorAccent">@color/lightColorAccent</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

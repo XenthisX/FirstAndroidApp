@@ -1,9 +1,11 @@
 package com.example.elibosley.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,10 +15,35 @@ import android.widget.TextClock;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String EXTRA_MESSAGE = "com.example.elibosley.myapplication.MESSAGE";
     public static boolean isTwentyFour = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        /*THEME = preferences.getString("theme_pref", "0");
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        assert fab != null;
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "THEME IS" + THEME, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null)
+                        .show();
+
+                switch (THEME) {
+                    case "0":
+                        setTheme(R.style.DarkTheme);
+                        recreate();
+                        break;
+                    case "1":
+                        setTheme(R.style.LightTheme);
+                        recreate();
+                        break;
+                }
+
+            }
+        }); */
     }
 
     public void sendMessage(View view) {
@@ -41,10 +68,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
 
         if (id == R.id.help) {
-            System.out.println("DisplayHelpActivity selected");
             Intent intent = new Intent(this, DisplayHelpActivity.class);
             startActivity(intent);
         }
+        if (id == R.id.settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        }
+
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -74,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Snackbar.make(view, current_mode, Snackbar.LENGTH_LONG)
                     .setAction("Action", null)
                     .show();
+
+        }
+        if (view.getId() == R.id.fab) {
+
 
         }
     }

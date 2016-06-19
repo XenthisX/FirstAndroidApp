@@ -11,9 +11,9 @@
     tools:context="com.example.elibosley.myapplication.DisplayHelpActivity">
 
     <TabHost
+        android:id="@+id/tabHost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/tabHost">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,23 +35,23 @@
                     android:name="@string/help"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="15dp">
 
                     <TextView
+                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
                         android:text="@string/help"
-                        android:id="@+id/textView" />
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
 
                     <TextView
+                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:paddingTop="16dp"
                         android:text="@string/help_text"
-                        android:id="@+id/textView2" />
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 </LinearLayout>
 
@@ -59,15 +59,17 @@
                     android:id="@+id/author_info"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:orientation="vertical">
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="15dp">
 
                     <TextView
                         android:id="@+id/author_view"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/author_info"/>
+                        android:paddingBottom="25dp"
+                        android:text="@string/author_info"
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
 
                     <include
                         android:id="@+id/worked_on_dates"
