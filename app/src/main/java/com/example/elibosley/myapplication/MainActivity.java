@@ -15,35 +15,11 @@ import android.widget.TextClock;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String EXTRA_MESSAGE = "com.example.elibosley.myapplication.MESSAGE";
     public static boolean isTwentyFour = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_my);
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        /*THEME = preferences.getString("theme_pref", "0");
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        assert fab != null;
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "THEME IS" + THEME, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .show();
-
-                switch (THEME) {
-                    case "0":
-                        setTheme(R.style.DarkTheme);
-                        recreate();
-                        break;
-                    case "1":
-                        setTheme(R.style.LightTheme);
-                        recreate();
-                        break;
-                }
-
-            }
-        }); */
     }
 
     public void sendMessage(View view) {
@@ -53,6 +29,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+    }
+
+    public void updateTheme(View view) {
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        int theme = Integer.valueOf(SP.getString("themeSelection", "0"));
+        switch (theme) {
+            case 0:
+                Utils.changeToTheme(this, Utils.THEME_DARK);
+                recreate();
+                break;
+            case 1:
+                Utils.changeToTheme(this, Utils.THEME_LIGHT);
+                recreate();
+                break;
+            default:
+                Utils.changeToTheme(this, Utils.THEME_DEFAULT);
+                break;
+        }
+        System.out.println(theme);
     }
 
     @Override
@@ -72,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if (id == R.id.settings) {
-            Intent intent = new Intent(this, SettingsActivity.class);
+            Intent intent = new Intent(this, PreferencesActivity.class);
             startActivity(intent);
         }
 

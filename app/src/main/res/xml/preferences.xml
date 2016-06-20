@@ -3,7 +3,7 @@
     <ListPreference
         android:entries="@array/pref_theme_titles"
         android:entryValues="@array/pref_theme_values"
-        android:key="theme_pref"
+        android:key="themeSelection"
         android:summary="This preference lets you choose a theme for the app"
         android:title="Select Theme" />
 </PreferenceScreen>
