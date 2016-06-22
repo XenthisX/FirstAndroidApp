@@ -1,9 +1,7 @@
 package com.example.elibosley.myapplication;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -15,10 +13,14 @@ import android.widget.TextClock;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public final static String EXTRA_MESSAGE = "com.example.elibosley.myapplication.MESSAGE";
     public static boolean isTwentyFour = false;
+    public static int currTheme;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.onActivityCreateSetTheme(this);
+
+        SetupTheme.setupWindowTheme(this);
+
         setContentView(R.layout.activity_my);
     }
 
@@ -29,25 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
-    }
-
-    public void updateTheme(View view) {
-        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        int theme = Integer.valueOf(SP.getString("themeSelection", "0"));
-        switch (theme) {
-            case 0:
-                Utils.changeToTheme(this, Utils.THEME_DARK);
-                recreate();
-                break;
-            case 1:
-                Utils.changeToTheme(this, Utils.THEME_LIGHT);
-                recreate();
-                break;
-            default:
-                Utils.changeToTheme(this, Utils.THEME_DEFAULT);
-                break;
-        }
-        System.out.println(theme);
     }
 
     @Override
@@ -90,8 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 clock.setFormat24Hour(twentyFourHour);
                 isTwentyFour = false;
                 current_mode = mode + " " + getString(R.string.time_mode_24);
-            }
-            else {
+            } else {
                 clock.setFormat12Hour(twelveHour);
                 clock.setFormat24Hour(twelveHour);
                 isTwentyFour = true;
@@ -103,9 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .show();
 
         }
-        if (view.getId() == R.id.fab) {
 
-
-        }
     }
+
 }

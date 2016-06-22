@@ -20,6 +20,7 @@
     <string name="end_date">Sunday, June 19th, 2016</string>
     <string name="date_range">Worked on between:</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="message">Message Display</string>
 
     <!-- Theme settings selection screen -->
     <string name="pref_header_theme">Theme</string>
@@ -28,8 +29,8 @@
         <item>Dark"</item>
     </string-array>
     <string-array name="pref_theme_values">
-        <item>1</item>
-        <item>0</item>
+        <item>"LightTheme"</item>
+        <item>"DarkTheme"</item>
     </string-array>
 
 </resources>
