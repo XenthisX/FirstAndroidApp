@@ -5,24 +5,40 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 /**
- * Created by elibosley on 6/21/16.
+ * Created by Elijah Bosley on 6/21/2016
  */
 public class SetupTheme {
 
-
+    /**
+     * Method to set the theme for an activity given that activity. This is very simple and uses
+     * preference manager to deal with settings.
+     *
+     * @param activity the activity to change style on
+     */
     public static void setupWindowTheme(Activity activity) {
         SharedPreferences pref = PreferenceManager
                 .getDefaultSharedPreferences(activity);
-        String themeName = pref.getString("themeSelection", "Theme1");
-        if (themeName.equals("Africa")) {
-            activity.setTheme(R.style.AppTheme);
+        String themeName = pref.getString("themeSelection", "Theme");
 
-        } else if (themeName.equals("LightTheme")) {
-            //Toast.makeText(this, "set theme", Toast.LENGTH_SHORT).show();
-            activity.setTheme(R.style.LightTheme);
-        } else if (themeName.equals("DarkTheme")) {
-            //Toast.makeText(this, "set theme", Toast.LENGTH_SHORT).show();
-            activity.setTheme(R.style.DarkTheme);
+        switch (themeName) {
+            case "LightTheme":
+                activity.setTheme(R.style.LightTheme);
+                break;
+            case "DarkTheme":
+                activity.setTheme(R.style.DarkTheme);
+                break;
+            case "OledBlack":
+                activity.setTheme(R.style.OledBlack);
+                break;
         }
+        Boolean darkerBar = pref.getBoolean("darkerBar", false);
+        if (darkerBar) {
+            activity.setTheme(R.style.DarkActionbar);
+        }
+        Boolean orangeFont = pref.getBoolean("orangeFont", false);
+        if (orangeFont) {
+            activity.setTheme(R.style.OrangeFont);
+        }
+
     }
 }

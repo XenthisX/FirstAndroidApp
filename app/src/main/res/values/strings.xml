@@ -10,7 +10,7 @@
     <string name="time_mode_24">24 hour</string>
     <string name="time_mode_12">12 hour</string>
     <string name="time_mode_text">text</string>
-    <string name="time_format_12">hh:mm a</string>
+    <string name="time_format_12">h:mm a</string>
     <string name="time_format_24">HH:mm</string>
     <string name="help">Help</string>
     <string name="author_tab">Author</string>
@@ -27,10 +27,12 @@
     <string-array name="pref_theme_titles">
         <item>Light"</item>
         <item>Dark"</item>
+        <item>OLED Black</item>
     </string-array>
     <string-array name="pref_theme_values">
         <item>"LightTheme"</item>
         <item>"DarkTheme"</item>
+        <item>OledBlack</item>
     </string-array>
 
 </resources>

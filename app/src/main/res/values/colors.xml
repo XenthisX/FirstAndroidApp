@@ -4,11 +4,17 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="lightColorActionBar">#3F51B5</color>
-    <color name="lightColorActionBarDark">#303F9F</color>
+    <color name="lightColorPrimary">#3F51B5</color>
+    <color name="lightColorPrimaryDark">#303F9F</color>
     <color name="lightColorAccent">#FF4081</color>
 
-    <color name="darkColorActionBar">#3bbb12</color>
-    <color name="darkColorActionBarDark">#303F9F</color>
+    <color name="darkColorPrimary">#64dd17</color>
+    <color name="darkColorPrimaryDark">#43a047</color>
     <color name="darkColorAccent">#FF4081</color>
+
+    <color name="oledColorPrimary">#455a64</color>
+    <color name="oledColorPrimaryDark">#263238</color>
+    <color name="oledColorAccent">#FF4081</color>
+    <color name="black">#000000</color>
+    <color name="orange">#ff6d00</color>
 </resources>

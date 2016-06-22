@@ -15,15 +15,31 @@
     </style>
 
     <style name="DarkTheme" parent="Theme.AppCompat">
-        <item name="colorPrimary">@color/darkColorActionBar</item>
-        <item name="colorPrimaryDark">@color/darkColorActionBarDark</item>
+        <item name="colorPrimary">@color/darkColorPrimary</item>
+        <item name="colorPrimaryDark">@color/darkColorPrimaryDark</item>
         <item name="colorAccent">@color/darkColorAccent</item>
     </style>
 
     <style name="LightTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/lightColorActionBar</item>
-        <item name="colorPrimaryDark">@color/lightColorActionBarDark</item>
+        <item name="colorPrimary">@color/lightColorPrimary</item>
+        <item name="colorPrimaryDark">@color/lightColorPrimaryDark</item>
         <item name="colorAccent">@color/lightColorAccent</item>
+    </style>
+
+    <style name="OledBlack" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/oledColorPrimary</item>
+        <item name="colorPrimaryDark">@color/oledColorPrimaryDark</item>
+        <item name="colorAccent">@color/lightColorAccent</item>
+        <item name="android:colorBackground">@color/black</item>
+    </style>
+
+    <style name="DarkActionbar">
+        <item name="colorPrimary">@color/oledColorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/oledColorPrimaryDark</item>
+    </style>
+
+    <style name="OrangeFont">
+        <item name="android:textColor">@color/orange</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
